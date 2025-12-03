@@ -6,14 +6,14 @@
   <title>Logan Youngs | Cloud and Solutions Architect in Training</title>
   <style>
     :root {
-      --bg: #0f172a;
-      --bg-alt: #020617;
-      --card: #020617;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.15);
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --border: #1e293b;
+      --bg: #f3f4f6;
+      --bg-alt: #e5e7eb;
+      --card: #ffffff;
+      --accent: #2563eb;
+      --accent-soft: rgba(37, 99, 235, 0.08);
+      --text: #0f172a;
+      --muted: #6b7280;
+      --border: #e5e7eb;
       --max-width: 960px;
       --radius: 12px;
     }
@@ -30,7 +30,7 @@
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #1f2937 0, #020617 45%, #000 100%);
+      background: radial-gradient(circle at top, #e5e7eb 0, #f9fafb 40%, #ffffff 100%);
       color: var(--text);
       line-height: 1.6;
     }
@@ -50,8 +50,12 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      backdrop-filter: blur(16px);
-      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.75));
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        to bottom,
+        rgba(249, 250, 251, 0.96),
+        rgba(249, 250, 251, 0.9)
+      );
       border-bottom: 1px solid var(--border);
     }
 
@@ -115,6 +119,7 @@
       align-items: center;
       padding-top: 4rem;
       padding-bottom: 2rem;
+      border-bottom: 1px dashed #d1d5db;
     }
 
     @media (max-width: 768px) {
@@ -127,30 +132,22 @@
     .hero-title {
       font-size: clamp(2.2rem, 4vw, 2.8rem);
       font-weight: 700;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
+      color: #020617;
+    }
+
+    .hero-subtitle-line {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #4b5563;
     }
 
     .hero-subtitle {
-      font-size: 1.05rem;
+      font-size: 1.0rem;
       color: var(--muted);
       margin-bottom: 1.5rem;
       max-width: 34rem;
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.75rem;
-    }
-
-    .tag {
-      padding: 0.2rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      font-size: 0.75rem;
-      color: var(--muted);
-      background: rgba(15, 23, 42, 0.9);
     }
 
     .hero-actions {
@@ -171,28 +168,33 @@
       align-items: center;
       justify-content: center;
       gap: 0.4rem;
+      transition: box-shadow 0.15s ease, transform 0.15s ease, background 0.15s ease;
     }
 
     .btn-primary {
-      background: radial-gradient(circle at top left, #38bdf8, #0284c7);
-      border-color: rgba(56, 189, 248, 0.3);
-      color: #0b1120;
+      background: linear-gradient(to right, #2563eb, #3b82f6);
+      border-color: rgba(37, 99, 235, 0.5);
+      color: #f9fafb;
       font-weight: 500;
+      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.25);
     }
 
     .btn-primary:hover {
-      filter: brightness(1.08);
+      transform: translateY(-1px);
+      box-shadow: 0 16px 32px rgba(37, 99, 235, 0.35);
     }
 
     .btn-ghost {
-      background: rgba(15, 23, 42, 0.7);
-      border-color: rgba(148, 163, 184, 0.4);
+      background: #ffffff;
+      border-color: var(--border);
       color: var(--muted);
     }
 
     .btn-ghost:hover {
       border-color: var(--accent);
-      color: var(--text);
+      color: #111827;
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.05);
+      transform: translateY(-1px);
     }
 
     .hero-note {
@@ -200,70 +202,38 @@
       color: var(--muted);
     }
 
-    .hero-card {
-      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.15), rgba(15, 23, 42, 0.98));
-      border-radius: 18px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      padding: 1.5rem;
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
-    }
-
-    .hero-card-header {
+    .hero-photo-wrapper {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin-bottom: 1.25rem;
+      justify-content: center;
     }
 
-    .hero-card-header h2 {
-      font-size: 0.95rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #e5e7eb;
-    }
-
-    .status-pill {
-      padding: 0.25rem 0.6rem;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      border: 1px solid rgba(15, 23, 42, 0.6);
-      background: rgba(15, 23, 42, 0.5);
-      color: #bae6fd;
-    }
-
-    .hero-card-row {
+    .hero-photo-frame {
+      width: 230px;
+      height: 230px;
+      border-radius: 24px;
+      border: 2px solid #d1d5db;
+      background: #f9fafb;
       display: flex;
-      justify-content: space-between;
-      font-size: 0.85rem;
-      margin-bottom: 0.5rem;
-      color: #e5e7eb;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+      position: relative;
+      overflow: hidden;
     }
 
-    .hero-card-row span:first-child {
+    .hero-photo-placeholder {
+      font-size: 0.9rem;
       color: var(--muted);
+      text-align: center;
+      padding: 0 1rem;
     }
 
-    .hero-card-cert-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.5rem;
-      margin-top: 1.25rem;
-      font-size: 0.8rem;
-    }
-
-    .badge {
-      background: rgba(15, 23, 42, 0.85);
-      border-radius: 999px;
-      padding: 0.35rem 0.7rem;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      display: inline-flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .badge span:last-child {
-      font-size: 0.75rem;
-      color: #a5b4fc;
+    .hero-photo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .section-header {
@@ -273,6 +243,7 @@
     .section-title {
       font-size: 1.4rem;
       margin-bottom: 0.35rem;
+      color: #0f172a;
     }
 
     .section-subtitle {
@@ -281,23 +252,30 @@
       max-width: 34rem;
     }
 
-    .grid-two {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-      gap: 2rem;
+    /* centered variant for About section */
+    .section-header-center {
+      text-align: center;
+      max-width: 36rem;
+      margin: 0 auto 1.5rem;
     }
 
-    @media (max-width: 768px) {
-      .grid-two {
-        grid-template-columns: minmax(0, 1fr);
-      }
+    .section-subtitle-center {
+      margin: 0 auto;
+    }
+
+    /* dashed divider before Education (new “page” feel) */
+    .section-divider {
+      border-top: 1px dashed #d1d5db;
+      margin-top: 2rem;
+      padding-top: 2.5rem;
     }
 
     .card {
-      background: rgba(15, 23, 42, 0.95);
+      background: var(--card);
       border-radius: var(--radius);
       border: 1px solid var(--border);
       padding: 1.25rem 1.35rem;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
     }
 
     .card + .card {
@@ -314,6 +292,7 @@
     .card-title {
       font-weight: 600;
       font-size: 1rem;
+      color: #111827;
     }
 
     .card-meta {
@@ -333,8 +312,8 @@
       font-size: 0.75rem;
       padding: 0.2rem 0.6rem;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: #f9fafb;
+      border: 1px solid rgba(148, 163, 184, 0.8);
       color: var(--muted);
     }
 
@@ -372,6 +351,7 @@
     .skills-group-title {
       font-weight: 500;
       margin-bottom: 0.35rem;
+      color: #111827;
     }
 
     .skills-list {
@@ -379,40 +359,11 @@
       font-size: 0.85rem;
     }
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 1rem;
-    }
-
-    @media (max-width: 768px) {
-      .projects-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .project-title {
-      font-weight: 500;
-      margin-bottom: 0.25rem;
-    }
-
-    .project-body {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 0.4rem;
-    }
-
     .contact-card {
       display: grid;
-      grid-template-columns: minmax(0, 2.5fr) minmax(0, 1.5fr);
+      grid-template-columns: minmax(0, 1fr);
       gap: 1.5rem;
       align-items: center;
-    }
-
-    @media (max-width: 768px) {
-      .contact-card {
-        grid-template-columns: minmax(0, 1fr);
-      }
     }
 
     .contact-links {
@@ -428,14 +379,17 @@
       margin-bottom: 0.4rem;
       border-radius: 999px;
       border: 1px solid var(--border);
-      background: rgba(15, 23, 42, 0.9);
+      background: #ffffff;
       color: var(--muted);
       font-size: 0.85rem;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
     }
 
     .contact-links a:hover {
       border-color: var(--accent);
-      color: var(--text);
+      color: #111827;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+      transform: translateY(-1px);
     }
 
     footer {
@@ -443,6 +397,7 @@
       padding: 1.1rem 1.25rem 2rem;
       font-size: 0.8rem;
       color: var(--muted);
+      background: #f9fafb;
     }
 
     .footer-inner {
@@ -473,23 +428,17 @@
     </header>
 
     <main>
-      <!-- Hero -->
+      <!-- HERO -->
       <section class="section hero" id="top">
         <div>
-          <h1 class="hero-title">Cloud and Solutions Architect in training</h1>
+          <h1 class="hero-title">Logan Youngs</h1>
+          <p class="hero-subtitle-line">Cloud and Solutions Architect</p>
           <p class="hero-subtitle">
-            I help connect business problems to cloud solutions. I am currently focused on AWS architecture, presales discovery, and building a long term career in technical consulting.
+            I help connect business problems to technical solutions. I am currently focused on AWS architecture,
+            presales discovery, and building a long term career in tech sales and technical consulting.
           </p>
 
-          <div class="hero-tags">
-            <span class="tag">AWS Certified Cloud Practitioner</span>
-            <span class="tag">OCI Foundations Associate</span>
-            <span class="tag">SAA in progress</span>
-            <span class="tag">Presales and client discovery</span>
-          </div>
-
           <div class="hero-actions">
-            <!-- TODO: update href to your resume URL in S3 or GitHub -->
             <a class="btn-primary" href="YOUR_RESUME_LINK_HERE" target="_blank" rel="noopener">
               View resume
             </a>
@@ -503,111 +452,112 @@
           </p>
         </div>
 
-        <aside class="hero-card">
-          <div class="hero-card-header">
-            <h2>Snapshot</h2>
-            <span class="status-pill">Open to work</span>
-          </div>
-          <div class="hero-card-row">
-            <span>Location</span>
-            <span>Nashville, Tennessee (open to relocate)</span>
-          </div>
-          <div class="hero-card-row">
-            <span>Background</span>
-            <span>Cloud infrastructure, presales, client discovery</span>
-          </div>
-          <div class="hero-card-row">
-            <span>Recent focus</span>
-            <span>AWS SAA preparation and portfolio projects</span>
-          </div>
-
-          <div class="hero-card-cert-grid">
-            <div class="badge">
-              <span>AWS</span>
-              <span>Cloud Practitioner</span>
-            </div>
-            <div class="badge">
-              <span>Oracle</span>
-              <span>OCI Foundations</span>
-            </div>
-            <div class="badge">
-              <span>AWS</span>
-              <span>SAA in progress</span>
-            </div>
-            <div class="badge">
-              <span>CompTIA</span>
-              <span>Tech+</span>
+        <aside class="hero-photo-wrapper">
+          <div class="hero-photo-frame">
+            <!-- Replace placeholder with real headshot when you have one -->
+            <!-- <img src="your-photo.jpg" alt="Logan Youngs" class="hero-photo-img" /> -->
+            <div class="hero-photo-placeholder">
+              Future photo of Logan<br />
+              (replace this box with your headshot)
             </div>
           </div>
         </aside>
       </section>
 
-      <!-- About and Experience -->
-      <section class="section" id="about">
-        <div class="section-header">
-          <h2 class="section-title">About</h2>
-          <p class="section-subtitle">
-            I come from a mix of cloud sales, technical discovery, and creative storytelling. My goal is to work as a cloud focused solutions architect or presales engineer who can break down complex systems in plain language for customers.
+      <!-- ABOUT (centered, tighter spacing below) -->
+      <section class="section" id="about" style="padding-top: 2rem; padding-bottom: 1.5rem;">
+        <div class="section-header section-header-center">
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle section-subtitle-center">
+            Hi, I am Logan. I come from a mix of cloud sales, technical discovery, and creative storytelling.
+            My goal is to work as a cloud focused solutions architect or presales engineer who can describe complex systems
+            in simple language for customers.
           </p>
-        </div>
-
-        <div class="grid-two" id="experience">
-          <div>
-            <h3 class="section-title" style="font-size: 1.1rem;">Experience</h3>
-
-            <article class="card">
-              <div class="card-heading">
-                <div>
-                  <div class="card-title">Cloud Infrastructure and AI Consultant</div>
-                  <div class="card-meta">Oracle Cloud Infrastructure · Sep 2024 to Sep 2025 · Nashville, Tennessee</div>
-                </div>
-              </div>
-              <div class="pill-row">
-                <span class="pill">Presales discovery</span>
-                <span class="pill">Cloud infrastructure</span>
-                <span class="pill">SQL and pipeline generation</span>
-              </div>
-              <ul>
-                <li>Partnered with account teams to qualify opportunities, run discovery, and position Oracle Cloud solutions against customer requirements.</li>
-                <li>Collaborated with engineers to translate business needs into technical architectures and next steps for pilots or proofs of concept.</li>
-                <li>Built repeatable outreach and follow up motions that supported pipeline growth and clearer visibility for the sales team.</li>
-              </ul>
-            </article>
-
-            <!-- You can duplicate this article block for more roles if you want -->
-          </div>
-
-          <div>
-            <h3 class="section-title" style="font-size: 1.1rem;">Education</h3>
-
-            <article class="card">
-              <div class="card-heading">
-                <div>
-                  <div class="card-title">Master of Management</div>
-                  <div class="card-meta">Ross School of Business · University of Michigan · May 2024</div>
-                </div>
-              </div>
-              <ul>
-                <li>Focused on client discovery, competitive differentiation, and solution design for real and simulated business cases.</li>
-              </ul>
-            </article>
-
-            <article class="card">
-              <div class="card-heading">
-                <div>
-                  <div class="card-title">BA in Film, Television, and Media</div>
-                  <div class="card-meta">University of Michigan · May 2023</div>
-                </div>
-              </div>
-              <ul>
-                <li>Learned how to structure narratives, communicate ideas clearly, and collaborate on complex projects with creative and technical teams.</li>
-              </ul>
-            </article>
-          </div>
         </div>
       </section>
 
-      <!-- Skills -->
+      <!-- EXPERIENCE (vertical stack) -->
+      <section class="section" id="experience" style="padding-top: 1.5rem;">
+        <div class="section-header">
+          <h2 class="section-title">My Experience</h2>
+        </div>
+
+        <!-- Oracle -->
+        <article class="card">
+          <div class="card-heading">
+            <div>
+              <div class="card-title">Cloud Infrastructure and AI Consultant</div>
+              <div class="card-meta">Oracle Cloud Infrastructure · Sep 2024 to Sep 2025 · Nashville, Tennessee</div>
+            </div>
+          </div>
+          <ul>
+            <li>Partnered with account teams to qualify opportunities, run discovery, and position Oracle Cloud solutions against customer requirements.</li>
+            <li>Collaborated with engineers to translate business needs into technical architectures and next steps for pilots or proofs of concept.</li>
+            <li>Built repeatable outreach and follow up motions that supported pipeline growth and clearer visibility for the sales team.</li>
+          </ul>
+        </article>
+
+        <!-- Effective (placeholder content) -->
+        <article class="card">
+          <div class="card-heading">
+            <div>
+              <div class="card-title">[Role Title] – Effective</div>
+              <div class="card-meta">Effective · [Dates] · [Location]</div>
+            </div>
+          </div>
+          <ul>
+            <li>[High level bullet about what you did and what changed because of it.]</li>
+            <li>[Another short impact bullet.]</li>
+          </ul>
+        </article>
+
+        <!-- SAY Detroit (placeholder content) -->
+        <article class="card">
+          <div class="card-heading">
+            <div>
+              <div class="card-title">[Role Title] – SAY Detroit</div>
+              <div class="card-meta">SAY Detroit · [Dates] · [Location]</div>
+            </div>
+          </div>
+          <ul>
+            <li>[High level bullet about what you did there.]</li>
+            <li>[Another short impact bullet.]</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="section section-divider" id="education">
+        <div class="section-header">
+          <h2 class="section-title">Education</h2>
+        </div>
+
+        <article class="card">
+          <div class="card-heading">
+            <div>
+              <div class="card-title">Master of Management</div>
+              <div class="card-meta">Ross School of Business · University of Michigan · May 2024</div>
+            </div>
+          </div>
+          <ul>
+            <li>Focused on client discovery, competitive differentiation, and solution design for real and simulated business cases.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-heading">
+            <div>
+              <div class="card-title">BA in Film, Television, and Media</div>
+              <div class="card-meta">University of Michigan · May 2023</div>
+            </div>
+          </div>
+          <ul>
+            <li>Learned how to structure narratives, communicate ideas clearly, and collaborate on complex projects with creative and technical teams.</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- SKILLS -->
       <section class="section" id="skills">
         <div class="section-header">
           <h2 class="section-title">Skills and Certifications</h2>
@@ -621,7 +571,7 @@
             <div>
               <div class="skills-group-title">Cloud and platforms</div>
               <div class="skills-list">
-                AWS (compute, storage, networking basics)<br />
+                AWS compute, storage, networking basics<br />
                 Oracle Cloud Infrastructure<br />
                 Linux and command line fundamentals
               </div>
@@ -649,59 +599,30 @@
           <div style="margin-top: 1rem; font-size: 0.9rem;">
             <strong>Certifications</strong>
             <div style="margin-top: 0.3rem; color: var(--muted);">
-              AWS Certified Cloud Practitioner · Oracle Cloud Infrastructure Foundations Associate · CompTIA Tech+ · AWS Solutions Architect Associate in progress
+              AWS Certified Cloud Practitioner · Oracle Cloud Infrastructure Foundations Associate ·
+              CompTIA Tech+ · AWS Solutions Architect Associate in progress
             </div>
           </div>
         </div>
       </section>
 
-     
-
-        <div class="projects-grid">
-          <article class="card">
-            <div class="project-title">Static personal website on AWS S3</div>
-            <p class="project-body">
-              Hosted this site as a static website on Amazon S3 with proper bucket policy, public access settings, and index document configuration.
-            </p>
-            <div class="pill-row">
-              <span class="pill">Amazon S3</span>
-              <span class="pill">Static hosting</span>
-              <span class="pill">Infrastructure basics</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="project-title">AWS study and lab environment</div>
-            <p class="project-body">
-              Built and tore down small lab environments while preparing for the SAA exam to better understand how services connect in real scenarios.
-            </p>
-            <div class="pill-row">
-              <span class="pill">AWS SAA prep</span>
-              <span class="pill">Hands on labs</span>
-              <span class="pill">Architecture thinking</span>
-            </div>
-          </article>
-
-          <!-- Add another project here if you want -->
-        </div>
-      </section>
-
-      <!-- Contact -->
+      <!-- CONTACT (simplified) -->
       <section class="section" id="contact">
         <div class="section-header">
           <h2 class="section-title">Contact</h2>
           <p class="section-subtitle">
-            The best way to reach me is by email or LinkedIn. I am open to roles in cloud solutions architecture, presales engineering, and technical consulting.
+            The best way to reach me is by email or LinkedIn. I am open to roles in cloud solutions architecture,
+            presales engineering, and technical consulting.
           </p>
         </div>
 
         <div class="card contact-card">
           <div>
             <p style="font-size: 0.95rem; color: var(--muted); margin-bottom: 1rem;">
-              If you are hiring for an early career cloud, presales, or technical consulting role and think my background could be a fit, I would be happy to talk.
+              If you are hiring for an early career cloud, presales, or technical consulting role and think my background
+              could be a fit, I would be happy to talk.
             </p>
             <div class="contact-links">
-              <!-- TODO: replace with your real email and LinkedIn -->
               <a href="mailto:YOUR_EMAIL_HERE">
                 Email
               </a>
@@ -709,16 +630,6 @@
                 LinkedIn
               </a>
             </div>
-          </div>
-          <div style="font-size: 0.85rem; color: var(--muted);">
-            <p>
-              I am especially interested in roles where I can:
-            </p>
-            <ul style="margin-top: 0.4rem; padding-left: 1.1rem; list-style: disc;">
-              <li>Work with customers to map business problems to cloud solutions.</li>
-              <li>Collaborate with engineers on architectures and next steps.</li>
-              <li>Grow my technical depth while staying close to people and communication.</li>
-            </ul>
           </div>
         </div>
       </section>
@@ -732,7 +643,6 @@
     </footer>
   </div>
 
-  <!-- Tiny inline script only to set the year. Remove this block if you prefer zero JavaScript. -->
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
